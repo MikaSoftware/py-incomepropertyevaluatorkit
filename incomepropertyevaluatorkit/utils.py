@@ -19,17 +19,7 @@ __status__ = "Production"
 
 
 MONTHS_IN_YEAR = 12
-DOLLAR_QUANTIZE = decimal.Decimal('.01')
 RATE_QUANTIZE = decimal.Decimal('.0001')
-
-
-def currency_decimal(f, round=decimal.ROUND_HALF_UP):
-    """
-    This function rounds the passed float to 2 decimal places.
-    """
-    if not isinstance(f, decimal.Decimal):
-        f = decimal.Decimal(str(f))
-    return f.quantize(DOLLAR_QUANTIZE, rounding=round)
 
 
 def rate_decimal(f, round=decimal.ROUND_HALF_UP):
