@@ -41,6 +41,10 @@ class TestFinancialAnalyzer(unittest.TestCase):
         self.assertIsNotNone(rental_income)
         self.assertEqual(rental_income['pk'], RENTAL_INCOME_SAMPLE_PK)
 
+        # Test and verify "get_rental_income" function works with missing key.
+        rental_income = analyzer.get_rental_income(666)
+        self.assertIsNone(rental_income)
+
         # Test and verify "remove_rental_income" functions.
         analyzer.remove_rental_income(RENTAL_INCOME_SAMPLE_PK)  # (1 of 2 - Existing item.)
         analyzer.remove_rental_income(RENTAL_INCOME_SAMPLE_PK)  # (2 of 2 - Non existent item.)
@@ -81,6 +85,10 @@ class TestFinancialAnalyzer(unittest.TestCase):
         self.assertIsNotNone(facility_income)
         self.assertEqual(facility_income['pk'], FACILITY_INCOME_SAMPLE_PK)
 
+        # Test and verify "get_facility_income" function works with missing key.
+        rental_income = analyzer.get_facility_income(666)
+        self.assertIsNone(rental_income)
+
         # Test and verify "get_facility_income" functions.
         analyzer.remove_facility_income(FACILITY_INCOME_SAMPLE_PK)  # (1 of 2 - Existing item.)
         analyzer.remove_facility_income(FACILITY_INCOME_SAMPLE_PK)  # (2 of 2 - Non existent item.)
@@ -119,6 +127,10 @@ class TestFinancialAnalyzer(unittest.TestCase):
         self.assertIsNotNone(expense)
         self.assertEqual(expense['pk'], EXPENSE_SAMPLE_PK)
 
+        # Test and verify "get_expense" function works with missing key.
+        rental_income = analyzer.get_expense(666)
+        self.assertIsNone(rental_income)
+
         # Test and verify "get_expense" functions.
         analyzer.remove_expense(EXPENSE_SAMPLE_PK)  # (1 of 2 - Existing item.)
         analyzer.remove_expense(EXPENSE_SAMPLE_PK)  # (2 of 2 - Non existent item.)
@@ -155,6 +167,10 @@ class TestFinancialAnalyzer(unittest.TestCase):
         commercial_income = analyzer.get_commercial_income(COMMERCIAL_INCOME_SAMPLE_PK)
         self.assertIsNotNone(commercial_income)
         self.assertEqual(commercial_income['pk'], COMMERCIAL_INCOME_SAMPLE_PK)
+
+        # Test and verify "get_commercial_income" function works with missing key.
+        rental_income = analyzer.get_commercial_income(666)
+        self.assertIsNone(rental_income)
 
         # Test and verify "get_commercial_income" functions.
         analyzer.remove_commercial_income(COMMERCIAL_INCOME_SAMPLE_PK)  # (1 of 2 - Existing item.)
@@ -224,6 +240,10 @@ class TestFinancialAnalyzer(unittest.TestCase):
         purchase_fee = analyzer.get_purchase_fee(PURCHASE_FEE_SAMPLE_PK)
         self.assertIsNotNone(purchase_fee)
         self.assertEqual(purchase_fee['pk'], PURCHASE_FEE_SAMPLE_PK)
+
+        # Test and verify "get_purchase_fee" function works with missing key.
+        rental_income = analyzer.get_purchase_fee(666)
+        self.assertIsNone(rental_income)
 
         # Test and verify "get_purchase_fee" functions.
         analyzer.remove_purchase_fee(PURCHASE_FEE_SAMPLE_PK)  # (1 of 2 - Existing item.)
@@ -320,6 +340,10 @@ class TestFinancialAnalyzer(unittest.TestCase):
         capital_improvement = analyzer.get_capital_improvement(CAPITAL_IMPROVEMENTS_SAMPLE_PK)
         self.assertIsNotNone(capital_improvement)
         self.assertEqual(capital_improvement['pk'], CAPITAL_IMPROVEMENTS_SAMPLE_PK)
+
+        # Test and verify "get_capital_improvement" function works with missing key.
+        rental_income = analyzer.get_capital_improvement(666)
+        self.assertIsNone(rental_income)
 
         # Test and verify "get_capital_improvement" functions.
         analyzer.remove_capital_improvement(CAPITAL_IMPROVEMENTS_SAMPLE_PK)  # (1 of 2 - Existing item.)
