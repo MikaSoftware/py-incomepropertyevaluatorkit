@@ -603,7 +603,7 @@ class FinancialAnalyzer:
             #---------------------------------------------------
             # STEP 1: The previous value needs to be the cash flow if it hasn't
             #         been already defined.
-            if previous_years_cash_flow == None:
+            if previous_years_cash_flow == Money(amount=0, currency=self._currency):
                 previous_years_cash_flow = cash_flow
 
             # STEP 2: Calculate the 'net processed from sales' variable which

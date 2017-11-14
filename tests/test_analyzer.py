@@ -392,6 +392,11 @@ class TestFinancialAnalyzer(unittest.TestCase):
         cap_rate = analyzer.get_cap_rate_with_mortgage_expense_included()
         self.assertIsNotNone(cap_rate)
 
+        # Extra test case where nothing was entered.
+        analyzer._purchase_price = Money(amount=0.00, currency='USD')
+        cap_rate = analyzer.get_cap_rate_with_mortgage_expense_included()
+        self.assertIsNotNone(cap_rate)
+
     def test_get_cap_rate_with_mortgage_expense_excluded(self):
         analyzer = FinancialAnalyzer()  # Initialize object we will be testing.
 
@@ -410,6 +415,11 @@ class TestFinancialAnalyzer(unittest.TestCase):
         )
 
         # Perform computation.
+        cap_rate = analyzer.get_cap_rate_with_mortgage_expense_excluded()
+        self.assertIsNotNone(cap_rate)
+
+        # Extra test case where nothing was entered.
+        analyzer._purchase_price = Money(amount=0.00, currency='USD')
         cap_rate = analyzer.get_cap_rate_with_mortgage_expense_excluded()
         self.assertIsNotNone(cap_rate)
 
