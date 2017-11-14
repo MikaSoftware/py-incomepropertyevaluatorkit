@@ -50,10 +50,12 @@ def appreciated_value(initial_value, year, inflation_rate):
 
 
 def return_on_investment(initial_investment_amount, total_return_amount):
+    assert isinstance(initial_investment_amount, Money), 'initial_investment_amount is not a Money class: %r' % initial_investment_amount
+    assert isinstance(total_return_amount, Money), 'total_return_amount is not a Money class: %r' % total_return_amount
     roi = None
 
     # Defensive Code: Prevent division of zero.
-    if initial_investment_amount == 0:
+    if initial_investment_amount.amount == Decimal(0.00):
         return Decimal(0)
 
     # Formulate:
