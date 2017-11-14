@@ -276,12 +276,12 @@ class FinancialAnalyzer:
             'purchase_fees': self._fee_dict,
             'capital_improvements': self._capital_improvements_dict,
             'mortgage': {
-                'interest_rate_per_payment_frequency': self._mortgage_calculator.interest_rate_per_payment_frequency(),
-                'total_number_of_payments_per_frequency': self._mortgage_calculator.total_number_of_payments_per_frequency(),
-                'mortgage_payment_per_payment_frequency': self._mortgage_calculator.mortgage_payment_per_payment_frequency(),
-                'monthly_mortgage_payment': self._mortgage_calculator.monthly_mortgage_payment(),
-                'annual_mortgage_payment': self._mortgage_calculator.annual_mortgage_payment(),
-                'percent_of_loan_financed': self._mortgage_calculator.percent_of_loan_financed(),
+                'interest_rate_per_payment_frequency': self._mortgage_calculator.get_interest_rate_per_payment_frequency(),
+                'total_number_of_payments_per_frequency': self._mortgage_calculator.get_total_number_of_payments_per_frequency(),
+                'mortgage_payment_per_payment_frequency': self._mortgage_calculator.get_mortgage_payment_per_payment_frequency(),
+                'monthly_mortgage_payment': self._mortgage_calculator.get_monthly_mortgage_payment(),
+                'annual_mortgage_payment': self._mortgage_calculator.get_annual_mortgage_payment(),
+                'percent_of_loan_financed': self._mortgage_calculator.get_percent_of_loan_financed(),
                 'schedule': self._mortgage_payment_schedule
             },
             'analysis': {
@@ -437,8 +437,8 @@ class FinancialAnalyzer:
     def get_net_income_with_mortgage(self):
         net_income_info = self.get_net_income_without_mortgage()
 
-        monthly_mortgage_payment = self._mortgage_calculator.monthly_mortgage_payment()
-        annual_mortgage_payment = self._mortgage_calculator.annual_mortgage_payment()
+        monthly_mortgage_payment = self._mortgage_calculator.get_monthly_mortgage_payment()
+        annual_mortgage_payment = self._mortgage_calculator.get_annual_mortgage_payment()
 
         return {
             'monthly': net_income_info['monthly'] - monthly_mortgage_payment,
@@ -479,7 +479,7 @@ class FinancialAnalyzer:
         return Decimal(cap_rate_percent)
 
     def perform_computation_on_mortgage(self):
-        self._mortgage_payment_schedule = self._mortgage_calculator.mortgage_payment_schedule()
+        self._mortgage_payment_schedule = self._mortgage_calculator.get_mortgage_payment_schedule()
 
     def perform_computation_on_analysis(self):
         total_amount = self.get_total_rental_income_amount()
