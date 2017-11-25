@@ -5,8 +5,9 @@ from datetime import datetime
 from decimal import Decimal
 from moneyed import Money # Third party library for "Money" datatype.
 from mortgagekit.calculator import MORTGAGEKIT_MONTH, MORTGAGEKIT_SEMI_ANNUAL
-from incomepropertyevaluatorkit.utils import *
-from incomepropertyevaluatorkit.analyzer import *
+from incomepropertyevaluatorkit.foundation.constants import *
+from incomepropertyevaluatorkit.foundation.utils import *
+from incomepropertyevaluatorkit.calculator.analyzer import *
 
 
 class TestUtils(unittest.TestCase):

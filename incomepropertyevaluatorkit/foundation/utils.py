@@ -8,16 +8,6 @@ import decimal
 from moneyed import Money # Third party library for "Money" datatype.
 
 
-__author__ = "Bartlomiej Mika"
-__copyright__ = "Copyright (c) 2017, Mika Software Corporation"
-__credits__ = ["Bartlomiej Mika"]
-__license__ = "BSD 2-Clause License"
-__version__ = "1.0.0"
-__maintainer__ = "Mika Software Corporation"
-__email = "bart@mikasoftware.com"
-__status__ = "Production"
-
-
 MONTHS_IN_YEAR = 12
 RATE_QUANTIZE = decimal.Decimal('.0001')
 

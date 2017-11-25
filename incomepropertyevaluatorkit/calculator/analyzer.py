@@ -13,18 +13,8 @@ import math
 import numpy as np  # Third party library to utilize "irr" function.
 from moneyed import Money # Third party library for "Money" datatype.
 from mortgagekit.calculator import *
-from incomepropertyevaluatorkit.utils import *
-from incomepropertyevaluatorkit.constants import MAX_YEAR
-
-
-__author__ = "Bartlomiej Mika"
-__copyright__ = "Copyright (c) 2017, Mika Software Corporation"
-__credits__ = ["Bartlomiej Mika", "David Stubbs"]
-__license__ = "BSD 2-Clause License"
-__version__ = "1.0.0"
-__maintainer__ = "Mika Software Corporation"
-__email = "bart@mikasoftware.com"
-__status__ = "Production"
+from incomepropertyevaluatorkit.foundation.utils import *
+from incomepropertyevaluatorkit.foundation.constants import MAX_YEAR
 
 
 class FinancialAnalyzer:
