@@ -1,0 +1,45 @@
+{
+    "id": PDF_EVALUATOR_DOCUMENT_ID,
+    "text_placeholders": {
+        "{{ copyrighted }}": "",
+        "{{ property_name }}": "",
+        "{{ property_address }}": "",
+        "{{ property_country }}": "",
+        "{{ property_province }}": "",
+        "{{ property_city }}": "",
+        "{{ presenter_name }}": "",
+        "{{ presenter_company }}": "",
+        "{{ presenter_address }}": "",
+        "{{ presenter_country }}": "",
+        "{{ presenter_province }}": "",
+        "{{ presenter_tel }}": "",
+        "{{ presenter_email }}": "",
+        "{{ presenter_website }}": "",
+        "{{ client_name }}": "",
+        "{{ client_company }}": "",
+        "{{ client_address }}": "",
+        "{{ client_country }}": "",
+        "{{ client_province }}": "",
+        "{{ client_tel }}": "",
+        "{{ client_email }}": "",
+        "{{ client_website }}": "",
+        "{{ neighborhood_name }}": "",
+        "{{ neighborhood_city }}": "",
+        "{{ neighborhood_province }}": "",
+        "{{ neighborhood_country }}": "",
+    },
+    "text_array_placeholders": [
+
+    ],
+    "image_placeholders": {
+        "{{ main_property_photo }}": "",
+        "{{ presenter_logo_image }}": "",
+        "{{ client_logo_image }}": ""
+    },
+    "image_array_placeholders": [
+
+    ],
+    "map_placeholders": {
+        "small_map": ""
+    }
+}

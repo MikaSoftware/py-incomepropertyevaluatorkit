@@ -15,16 +15,19 @@ from incomepropertyevaluatorkit.pdf.pdfdocgen import *
 THIS_TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 TEST_FILENAME = "file.pdf"
 TEST_FILEPATH = THIS_TEST_DIR+"/"+TEST_FILENAME
-
+TEST_DOC_CONTENT = {
+    "id": PDF_EVALUATOR_DOCUMENT_ID,
+    "text_placeholders": {
+        "{{ copyrighted }}": "Copyrighted 2017 Duplexsoft",
+        "{{ property_name }}": "Whiskey Cabin"
+    }
+}
 
 class TestPDFDocGen(unittest.TestCase):
 
     def test_generate_evaluator_doc(self):
-        pdf_docgen = PDFDocGen("evaluator")
-        pdf_docgen.set_doc_info({
-            "{{ country }}": "Canada",
-            "{{ province }}": "Ontario"
-        })
+        pdf_docgen = PDFDocGen(PDF_EVALUATOR_DOCUMENT_ID)
+        pdf_docgen.set_doc_content(TEST_DOC_CONTENT)
         pdf_docgen.generate(TEST_FILEPATH)
 
         # Confirm that a file does get generated.

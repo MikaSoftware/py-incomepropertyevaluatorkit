@@ -25,8 +25,8 @@ class PDFDocGen:
         assert doc_id == "evaluator", 'Currently the only supported document is "evaluator".'
         self._doc_id = doc_id
 
-    def set_doc_info(self, doc_info):
-        self._doc_info = doc_info
+    def set_doc_content(self, doc_content):
+        self._doc_content = doc_content
 
     def generate(self, filepath):
         # Load up the document from the file.
@@ -58,10 +58,10 @@ class PDFDocGen:
     def update_html_content(self):
         """
         Function will go through the document text and replace all the
-        placeholders with the values in this dicitonary.
+        placeholders with the user content.
         """
         if self._doc_id is PDF_EVALUATOR_DOCUMENT_ID:
-            self._html_content = generat_evaluator_content(self._html_content, self._doc_info)
+            self._html_content = set_evaluator_content(self._html_content, self._doc_content)
 
     def convert_html_to_pdf(self, sourceHtml, outputFilename):
         """
