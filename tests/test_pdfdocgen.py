@@ -2,6 +2,7 @@
 from __future__ import print_function
 import unittest
 import os
+import json
 from datetime import datetime
 from decimal import Decimal
 from moneyed import Money # Third party library for "Money" datatype.
@@ -13,25 +14,24 @@ from incomepropertyevaluatorkit.pdf.pdfdocgen import *
 
 
 THIS_TEST_DIR = os.path.dirname(os.path.abspath(__file__))
-TEST_FILENAME = "file.pdf"
-TEST_FILEPATH = THIS_TEST_DIR+"/"+TEST_FILENAME
-TEST_DOC_CONTENT = {
-    "id": PDF_EVALUATOR_DOCUMENT_ID,
-    "text_placeholders": {
-        "{{ copyrighted }}": "Copyrighted 2017 Duplexsoft",
-        "{{ property_name }}": "Whiskey Cabin"
-    }
-}
+TEST_SAMPLE_FILEPATH = THIS_TEST_DIR+"/"+"evaluator_sample.json"
+TEST_OUTPUT_FILEPATH = THIS_TEST_DIR+"/"+"file.pdf"
+
 
 class TestPDFDocGen(unittest.TestCase):
 
     def test_generate_evaluator_doc(self):
-        pdf_docgen = PDFDocGen(PDF_EVALUATOR_DOCUMENT_ID)
-        pdf_docgen.set_doc_content(TEST_DOC_CONTENT)
-        pdf_docgen.generate(TEST_FILEPATH)
+        # Open up our JSON file with sample data to test with our class.
+        with open(TEST_SAMPLE_FILEPATH) as input_file_handle:
+            doc_content = json.load(input_file_handle)
 
-        # Confirm that a file does get generated.
-        self.assertTrue(os.path.isfile(TEST_FILEPATH))
+        # Test that the code works.
+        pdf_docgen = PDFDocGen(PDF_EVALUATOR_DOCUMENT_ID)
+        pdf_docgen.set_doc_content(doc_content)
+        pdf_docgen.generate(TEST_OUTPUT_FILEPATH)
+
+        # Verify that a file does get generated.
+        self.assertTrue(os.path.isfile(TEST_OUTPUT_FILEPATH))
 
         # DEVELOPERS NOTE:
         # The above code only confirms that a PDF was generated and thus it
@@ -40,7 +40,7 @@ class TestPDFDocGen(unittest.TestCase):
         # will be done manually be the python developer.
 
         # Delete the file once tested.
-        os.remove(TEST_FILEPATH)
+        os.remove(TEST_OUTPUT_FILEPATH)
 
 if __name__ == '__main__':
     unittest.main()
