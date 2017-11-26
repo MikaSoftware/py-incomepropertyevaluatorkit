@@ -1,4 +1,14 @@
-mortgagekit==1.0.0
+coverage==4.4.2
+html5lib==1.0b10
+httplib2==0.10.3
 numpy==1.13.3
+olefile==0.44
+Pillow==4.3.0
+py-moneyed==0.7.0
+py-mortgagekit==1.0.3b1
+PyPDF2==1.26.0
 python-dateutil==2.6.1
+reportlab==3.4.0
 six==1.11.0
+webencodings==0.5.1
+xhtml2pdf==0.2b1

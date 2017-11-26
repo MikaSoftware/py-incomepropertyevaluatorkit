@@ -151,5 +151,5 @@ env
 #—————————————————————————————
 # Application Specific Ignores
 #—————————————————————————————
-staticfiles
-/static/
+sample
+*.pdf

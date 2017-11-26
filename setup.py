@@ -37,7 +37,8 @@ setup(
     install_requires=[
         'py-moneyed',
         'py-mortgagekit',
-        'numpy'
+        'numpy',
+        'xhtml2pdf>=0.2b1'
     ],
     test_suite='nose.collector',
     tests_require=['nose'],

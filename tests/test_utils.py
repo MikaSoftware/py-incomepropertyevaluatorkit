@@ -44,5 +44,15 @@ class TestUtils(unittest.TestCase):
         expect = Decimal(0.0000)
         self.assertAlmostEqual(actual, expect, 2)
 
+    def test_replace_all(self):
+        data = "Hello world, my name is {{ name }}! {{ extra }}"
+        rep = {
+            "{{ name }}": "Chambers",
+            "{{ extra }}": "How are you?"
+        }
+        out_data = replace_all(data, rep)
+        self.assertEqual(out_data, "Hello world, my name is Chambers! How are you?")
+
+
 if __name__ == '__main__':
     unittest.main()

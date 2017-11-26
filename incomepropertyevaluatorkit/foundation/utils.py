@@ -53,3 +53,12 @@ def return_on_investment(initial_investment_amount, total_return_amount):
     roi = total_return_amount - initial_investment_amount
     roi = roi.amount / initial_investment_amount.amount
     return rate_decimal(roi)
+
+
+def replace_all(text, dic):
+    """
+    https://stackoverflow.com/a/6117042
+    """
+    for i, j in dic.items():
+        text = text.replace(i, j)
+    return text
