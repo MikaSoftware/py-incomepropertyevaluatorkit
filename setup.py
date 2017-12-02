@@ -27,7 +27,7 @@ setup(
         'Topic :: Office/Business :: Financial :: Accounting',
       ],
     keywords='mortgage real estate financial business bank',
-    version='1.0.0',
+    version='0.0.1',
     author='Bartlomiej Mika',
     author_email='bart@mikasoftware.com',
     url='https://github.com/MikaSoftware/incomepropertyevaluatorkit-py',
@@ -38,6 +38,7 @@ setup(
         'py-moneyed',
         'py-mortgagekit',
         'numpy',
+        'pisa',
         'xhtml2pdf>=0.2b1'
     ],
     test_suite='nose.collector',

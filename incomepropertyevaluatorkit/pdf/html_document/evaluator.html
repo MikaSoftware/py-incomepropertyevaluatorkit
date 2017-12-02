@@ -1,19 +1,54 @@
 <html>
 <body>
+    <!-- ###################### -->
+    <!--       Title Page       -->
+    <!-- ###################### -->
+    <small>{{ copyrighted }}</small>
+
     <h1>Residential Income Property Information Package</h1>
     <p>For</p>
-    <p>{{ address }}</p>
-    <p>{{ city }}, {{ province }}, {{ country }}</p>
+    <p>{{ property_name }}</p>
+    <p>{{ property_address }}</p>
+    <p>{{ property_location }}</p>
 
     <br />
     <br />
-    {{ cover_image }}
+    {{ main_property_photo }}
     <br />
     <br />
 
     <p>Prepared By</p>
-    <p>{{ creator_names }}</p>
+    <p>{{ presenter_name }}</p>
+    <p>{{ presenter_address }}</p>
+    <p>{{ presenter_location }}</p>
+    <p>{{ presenter_tel }}</p>
+    <p>{{ presenter_email }}</p>
+    <p>{{ presenter_website }}</p>
 
+    <br />
+    <br />
+
+    <p>Presented For</p>
+    <p>{{ client_name }}</p>
+    <p>{{ client_address }}</p>
+    <p>{{ client_location }}</p>
+    <p>{{ client_tel }}</p>
+    <p>{{ client_email }}</p>
+    <p>{{ client_website }}</p>
+
+    <!-- ###################### -->
+    <!-- Executive Summary Page -->
+    <!-- ###################### -->
+    <h2>Property Summary</h2>
+    <h3>Property Information</h3>
+
+    <h4>Property Description:</h4>
+    <p>{{ neighborhood_property_description }}</p>
+    <h4>Location:</h4>
+    <p>{{ neighborhood_location_description }}</p>
+    <h4>Financial Snapshot:</h4>
+
+    <!-- TODO: Iterate for-loop -->
 
 </body>
 </html>
