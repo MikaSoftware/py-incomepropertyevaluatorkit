@@ -1,8 +1,10 @@
 # py-incomepropertyevaluatorkit
+**This library is currently being developed and is not production quality ready!**
+
 ## Build Status
 [![Build Status](https://travis-ci.org/MikaSoftware/py-incomepropertyevaluatorkit.svg?branch=master)](https://travis-ci.org/MikaSoftware/py-incomepropertyevaluatorkit)
+[![PyPI version fury.io](https://badge.fury.io/py/py-incomepropertyevaluatorkit.svg)](https://pypi.python.org/pypi/py-incomepropertyevaluatorkit)
 [![Coverage Status](https://coveralls.io/repos/github/MikaSoftware/py-incomepropertyevaluatorkit/badge.svg?branch=master)](https://coveralls.io/github/MikaSoftware/py-incomepropertyevaluatorkit?branch=master)
-**This library is currently being developed and is not production quality ready!**
 
 ## Overview
 Python library for performing rental and income property calculations.
